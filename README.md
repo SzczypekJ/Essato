@@ -32,5 +32,5 @@ This command will run the application. Application can be also run from the proj
 You can also write in terminal the commad:  
 **flask run**  
   
-**6. Opening the application in the browser**
+**6. Opening the application in the browser**  
 When you run the applicaion please copy the **http://127.0.0.1:5000** to your webbrowser or click on it using **CTR+LPM**
