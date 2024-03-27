@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+Our patients
+{% endblock %}
+
+{% block content %}
+<!-- Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">This patient will be deleted:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="idDeleteModalBody">
+                ...
+            </div>
+            <form id="confirmDeleteForm" method="GET">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.delete-confirm').click(function () {
+            var desc = $(this).attr('data-desc');
+            var url = $(this).attr('data-url');
+            $('#idDeleteModalBody').text(desc);
+            $('#confirmDeleteForm').attr("action", url);
+        });
+    });
+</script>
+
+<div class="container">
+    <form id="exchange_form" action="{{ url_for('our_patients') }}" method="POST">
+        <div class="row">
+            <div class="col">
+                <button type="submit" name="sort_by" value="id" class="btn btn-primary">Sort by ID</button>
+                <button type="submit" name="sort_by" value="first_name" class="btn btn-primary">Sort by First
+                    Name</button>
+                <button type="submit" name="sort_by" value="last_name" class="btn btn-primary">Sort by Last
+                    Name</button>
+                <button type="submit" name="sort_by" value="PESEL" class="btn btn-primary">Sort by PESEL</button>
+                <button type="submit" name="sort_by" value="street" class="btn btn-primary">Sort by Street</button>
+                <button type="submit" name="sort_by" value="city" class="btn btn-primary">Sort by City</button>
+                <button type="submit" name="sort_by" value="zip_code" class="btn btn-primary">Sort by Zip code</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <th scope="col">Unique ID</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">PESEL</th>
+            <th scope="col">Street</th>
+            <th scope="col">City</th>
+            <th scope="col">Zip code</th>
+            <th scope="col">Operations</th>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <th scope="row">{{ patient.id }}</th>
+                <td>{{ patient.first_name }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.PESEL }}</td>
+                <td>{{ patient.street }}</td>
+                <td>{{ patient.city }}</td>
+                <td>{{ patient.zip_code }}</td>
+                <td>
+                    <a href="{{ url_for('edit_patient', patient_id=patient.id) }}" class="btn btn-success btn-sm"
+                        role="button">Edit...</a>
+
+                    <a type="button" class="btn btn-danger btn-sm delete-confirm" data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteModal"
+                        data-desc="{{ 'Delete patient for {} {} ({})?'.format(patient.first_name, patient.last_name, patient.PESEL, patient.street, patient.city, patient.zip_code) }}"
+                        data-url="{{ url_for('delete_patient', patient_id=patient.id) }}">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

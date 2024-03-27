@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    {% if patient_info == False %}
+    <img src="{{ url_for('static', filename='hurra.png') }}" class="rounded-circle mx-auto d-block">
+    {% else %}
+    <img src="{{ url_for('static', filename='you.png') }}" class="rounded-circle mx-auto d-block">
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Medical Clinic System</h1>
+    <p>The "Medical Clinic System" application has been created to streamline the process of managing patient
+        data in a medical clinic. It is a simple yet functional application that allows adding, editing, deleting,
+        sorting and listing patients.</p>
+
+    <h2>Functionalities:</h2>
+    <ul>
+        <li><strong>Add Patient:</strong> Users can add new patients to the database through a form containing
+            fields for personal data (first name, last name, PESEL) and address (street, city, zip code).</li>
+        <li><strong>Edit Patient:</strong> There is an option to edit the data of an existing patient, allowing for
+            the update of information, such as changing the address.</li>
+        <li><strong>Delete Patient:</strong> There is an option to delete unnecessary or incorrectly added
+            patient entries from the database.</li>
+        <li><strong>List Patients:</strong> The application enables displaying a list of all patients in the form of
+            a table, presenting their basic personal and address data.</li>
+        <li><strong>Sorting:</strong> There are buttons with which you can sort the current patient list in a way
+            that suits you best, e.g. by index, by first name, etc.</li>
+    </ul>
+
+    <h2>Required Patient Data:</h2>
+    <ul>
+        <li>First Name</li>
+        <li>Last Name</li>
+        <li>PESEL (Personal Identification Number)</li>
+        <li>Street</li>
+        <li>City</li>
+        <li>Zip Code</li>
+    </ul>
+
+    <h2>Data Storage:</h2>
+    <p>Patient data is stored in a database, ensuring permanent and secure storage of information. In this application
+        I used the SQLite3 database.
+    </p>
+</div>
+{% endblock %}

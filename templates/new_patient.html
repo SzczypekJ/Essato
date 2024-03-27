@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-10 h1">Add new patient to the medical clinic:</div>
+    </div>
+    <form id="exchange_form" action="{{ url_for('adding_new_patient') }}" method="POST">
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"><label for="first_name">First name</label></div>
+            <div class="col-4">
+                <input type="text" id="first_name" name="first_name" value="" class="form-control"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"><label for="last_name">Last name</label></div>
+            <div class="col-4">
+                <input type="text" id="last_name" name="last_name" value="" class="form-control"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"><label for="PESEL">PESEL</label></div>
+            <div class="col-4">
+                <input type="text" id="PESEL" name="PESEL" value="" class="form-control"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"><label for="street">Street</label></div>
+            <div class="col-4">
+                <input type="text" id="street" name="street" value="" class="form-control"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"><label for="city">City</label></div>
+            <div class="col-4">
+                <input type="text" id="city" name="city" value="" class="form-control"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"><label for="zip_code">Zip code</label></div>
+            <div class="col-4">
+                <input type="text" id="zip_code" name="zip_code" value="" class="form-control"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-1 col-form-label"></div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary">Add patient</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
