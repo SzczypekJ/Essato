@@ -26,7 +26,7 @@ to the folder where you clone the project. For example:
 app_info = {'db_file': **'C:/Users/szczy/Desktop/STUDIA/dodat/Esatto/data/patients.db'** - The path to change}
 
   
-**4. Running the application**  
+**5. Running the application**  
 To run the application, run the following command:  
 **python app.py**  
 This command will run the application. Application can be also run from the project by **running the code**.  
