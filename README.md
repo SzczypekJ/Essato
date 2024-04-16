@@ -3,7 +3,7 @@
 To run code from this repository, follow these steps:  
 **1. Downloading the repository**  
 Clone this repository to your local computer using the **'git clone'** command:  
-**git clone https://github.com/SzczypekJ/Essato.git**  
+**git clone https://github.com/SzczypekJ/Medical-Clinic.git**  
   
 **2. Go to the project directory**  
 Navigate to the directory that contains the downloaded repository:  
