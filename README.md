@@ -1,36 +1,53 @@
-# Instructions for running the code  
-  
-To run code from this repository, follow these steps:  
-**1. Downloading the repository**  
-Clone this repository to your local computer using the **'git clone'** command:  
-**git clone https://github.com/SzczypekJ/Medical-Clinic.git**  
-  
-**2. Go to the project directory**  
-Navigate to the directory that contains the downloaded repository:  
-**cd folder_name**  
-Where **'folder_name'** is the name of the directory that was created when the repository was downloaded.  
-  
-**3. Install required packages**  
-The required packages are:  
+
+# Instructions for Running the Code
+
+To run the code from this repository, follow these steps:
+
+## 1. Downloading the Repository
+Clone this repository to your local computer using the following command:
+```bash
+git clone https://github.com/SzczypekJ/Medical-Clinic.git
+```
+
+## 2. Navigating to the Project Directory
+Navigate to the directory that contains the downloaded repository:
+```bash
+cd Medical-Clinic
+```
+
+## 3. Installing Required Packages
+The required packages are:
 - Python
 - Flask
 - SQLite3
-  
-To install Python and Flask use **pip install** command.  
-To install SQLite3 follow the instructions from this website:  
-https://www.tutorialspoint.com/sqlite/sqlite_installation.htm  
-  
-**4. Change the path to database file**  
-In this project I used SQLite 3 database. To connect with it you have to change the path in app.py file on line 9  
-to the folder where you clone the project. For example:  
-app_info = {'db_file': **'C:/Users/szczy/Desktop/STUDIA/dodat/Esatto/data/patients.db'** - The path to change}
-  
-**5. Running the application**  
-To run the application, run the following command:  
-**python app.py**  
-This command will run the application. Application can be also run from the project by **running the code**.  
-You can also write in terminal the commad:  
-**flask run**  
-  
-**6. Opening the application in the browser**  
-When you run the applicaion please copy the **http://127.0.0.1:5000** to your webbrowser or click on it using **CTR+LPM**
+
+To install Python and Flask, use the `pip install` command:
+```bash
+pip install flask
+```
+
+To install SQLite3, follow the instructions from [this website](https://www.tutorialspoint.com/sqlite/sqlite_installation.htm).
+
+## 4. Changing the Path to the Database File
+In this project, SQLite3 database is used. To connect with it, you need to change the path in the `app.py` file on line 9 to the folder where you cloned the project. For example:
+```python
+app_info = {'db_file': 'C:/Users/szczy/Desktop/STUDIA/dodat/Esatto/data/patients.db'}
+```
+Change the path accordingly to where your `patients.db` file is located.
+
+## 5. Running the Application
+To run the application, execute the following command:
+```bash
+python app.py
+```
+This command will run the application. You can also run the application by executing:
+```bash
+flask run
+```
+
+## 6. Opening the Application in the Browser
+Once the application is running, open your web browser and navigate to:
+```
+http://127.0.0.1:5000
+```
+You can copy and paste this URL into your web browser or click on it while holding `Ctrl` (Windows/Linux) or `Cmd` (Mac) and clicking the link.
